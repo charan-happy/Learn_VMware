@@ -36,64 +36,64 @@
 <details><summary>36. what is traffic shaping <br></summary></details>
 <details><summary>37. what is port group <br></summary></details>
 <details><summary>38. Network adapter types in VMware<br></summary></details>
-<details><summary>39. what are security policies available in standard and Distributed switch <br></summary><details>
-<details></details><summary>40.what is vMotion <br></summary></details>
-<details></details><summary>what is storage vMotion <br></summary></details>
-<details></details><summary> what is DRS<br></summary></details>
-<details></details><summary>what is SDRS <br></summary></details>
-<details></details><summary>what is High Availability <br></summary></details>
-<details></details><summary>what is fault tolerance <br></summary></details>
-<details></details><summary>what is EVC <br></summary></details>
-<details></details><summary>what is VCHA <br></summary></details>
-<details></details><summary>what is Resource pool <br></summary></details>
-<details></details><summary>what is vAPP <br></summary></details>
-<details></details><summary> what is Host profiles <br></summary></details>
-<details></details><summary>what is Hot Add <br></summary></details>
-<details></details><summary>what is VUM <br></summary></details>
-<details></details><summary> what is vcenter converter<br></summary></details>
-<details></details><summary>what is content library in vmware <br></summary></details>
-<details></details><summary> what two types of content library available in vmware<br></summary></details>
-<details></details><summary>what is cold migration <br></summary></details>
-<details></details><summary>what is hot migration <br></summary></details>
-<details></details><summary>how vSphere Licensing works <br></summary>/<details>
-<details></details><summary> Which Licence editions are available in vsphere 6.7<br></summary></details>
-<details></details><summary> which are Editions available in vCenter Server<br></summary></details>
-<details<summary>what is vsphere Replication <br></summary></details>
-<details<summary>what is SRM <br></summary></details>
-<details<summary>what is VMware NSX <br></summary></details>
-<details<summary>what are key features of VMware NSX <br></summary></details>
-<details<summary> what are the ways of Installing ESXI<br></summary></details>
-<details<summary>what are the ways of Upgrading ESXi <br></summary></details>
-<details<summary> what is customized ESXI ISO<br></summary></details>
-<details<summary>what is DCU <br></summary></details>
-<details<summary> what are the ways of accessing ESXI<br></summary></details>
-<details<summary>what is lockdown mode in ESXi <br></summary></details>
-<details<summary> what is maximum number of snapshots can be used in single chain <br></summary></details>
-<details<summary> what is vcenter server<br></summary></details>
-<details<summary>what is difference between vcenter server for windows and vcenter server appliance <br></summary></details>
-<details<summary> what is platform service controller<br></summary></details>
-<details<summary> what is operating system in vcenter server appliance<br></summary></details>
-<details<summary> which databases are supported with vcenter server appliance 6.7<br></summary></details>
-<detaails><summary>  Types of Deployment Supported in vcenter server   <br></summary></details>
-<detaails><summary>   what are CPU, Memory, and storage requirements for vcenter server applinance 6.7   <br></summary></details>
-<detaails><summary> which services are in vcenter server appliance with platform service controller<br><summary></details>
-<detaails><summary> what is vcenter server enhanced linked mode    <br></summary></details>
-<detaails><summary>  what is the latest version of VMFS   <br></summary></details>
-<detaails><summary>  differnce between VMFS 5& VMFS 6   <br></summary></details>
-<detaails><summary>  What is permananent Drive loss    <br></summary></details>
-<detaails><summary> what is all paths down    <br></summary></details>
-<detaails><summary>  what is RDM   <br></summary></details>
-<detaails><summary>  what are RDM compatibility modes   <br></summary></details>
-<detaails><summary> which protocols are supported for VCSA backup    <br></summary></details>
-<detaails><summary> what is heartbeating in vsphere HA    <br></summary></details>
-<detaails><summary> which 2 types of heartbeats are used by vsphre HA    <br></summary></details>
-<detaails><summary>  what is Election process in vsphere HA   <br></summary></details>
-<detaails><summary>  how election process works in vsphere HA   <br></summary></details>
-<detaails><summary>  what is Master & Slave in vsphere HA    <br></summary></details>
-<detaails><summary> what is fault tolerance    <br></summary></details>
-<detaails><summary>  which locking technology is used by Vmware FT    <br></summary></details>
-<detaails><summary>  what is licensing limits in VMware Fault Tolerance   <br></summary></details>
-<detaails><summary> what is DRs    <br></summary></details>
-<detaails><summary>  what are the DRs Rules   <br></summary></details>
-<detaails><summary> What is the use of Update Manager    <br></summary></details>
-<details><summary>what is the process of upgrading vsphere components or infrastructure<br></summary></details>
+<details><summary>39. what are security policies available in standard and Distributed switch <br></summary></details>
+<details><summary>40.what is vMotion <br></summary></details>
+<details><summary>41. what is storage vMotion <br></summary></details>
+<details><summary>42. what is DRS<br></summary></details>
+<details><summary>43. what is SDRS <br></summary></details>
+<details><summary>44. what is High Availability <br></summary></details>
+<details><summary>45. what is fault tolerance <br></summary></details>
+<details><summary>46. what is EVC <br></summary></details>
+<details><summary>47. what is VCHA <br></summary></details>
+<details><summary>48. what is Resource pool <br></summary></details>
+<details><summary>49. what is vAPP <br></summary></details>
+<details><summary>50. what is Host profiles <br></summary></details>
+<details><summary>51. what is Hot Add <br></summary></details>
+<details><summary>52. what is VUM <br></summary></details>
+<details><summary>53. what is vcenter converter<br></summary></details>
+<details><summary>54. what is content library in vmware <br></summary></details>
+<details><summary>55. what two types of content library available in vmware<br></summary></details>
+<details><summary>56. what is cold migration <br></summary></details>
+<details><summary>57. what is hot migration <br></summary></details>
+<details><summary>58. how vSphere Licensing works <br></summary></details>
+<details><summary>59. Which Licence editions are available in vsphere 6.7<br></summary></details>
+<details><summary>60.which are Editions available in vCenter Server<br></summary></details>
+<details><summary>61. what is vsphere Replication <br></summary></details>
+<details><summary>62. what is SRM <br></summary></details>
+<details><summary>63. what is VMware NSX <br></summary></details>
+<detais>><summary>64. what are key features of VMware NSX <br></summary></details>
+<details><summary>65. what are the ways of Installing ESXI<br></summary></details>
+<details><summary>66. what are the ways of Upgrading ESXi <br></summary></details>
+<details><summary>67. what is customized ESXI ISO<br></summary></details>
+<details><summary>68. what is DCU <br></summary></details>
+<details><summary>69. what are the ways of accessing ESXI<br></summary></details>
+<details><summary>70. what is lockdown mode in ESXi <br></summary></details>
+<details><summary>71. what is maximum number of snapshots can be used in single chain <br></summary></details>
+<details><summary>72. what is vcenter server<br></summary></details>
+<details><summary>73. what is difference between vcenter server for windows and vcenter server appliance <br></summary></details>
+<details><summary>74. what is platform service controller<br></summary></details>
+<details><summary>75. what is operating system in vcenter server appliance<br></summary></details>
+<details><summary>76. which databases are supported with vcenter server appliance 6.7<br></summary></details>
+<details><summary>77. Types of Deployment Supported in vcenter server   <br></summary></details>
+<details><summary>78. what are CPU, Memory, and storage requirements for vcenter server applinance 6.7   <br></summary></details>
+<details><summary>79. which services are in vcenter server appliance with platform service controller<br><summary></details>
+<details><summary>80. what is vcenter server enhanced linked mode  <br></summary></details>
+<details><summary>81. what is the latest version of VMFS   <br></summary></details>
+<details><summary>82. differnce between VMFS 5& VMFS 6   <br></summary></details>
+<details><summary>83.  What is permananent Drive loss    <br></summary></details>
+<details><summary>84. what is all paths down    <br></summary></details>
+<details><summary>85.  what is RDM   <br></summary></details>
+<details><summary>86.  what are RDM compatibility modes   <br></summary></details>
+<details><summary>87. which protocols are supported for VCSA backup    <br></summary></details>
+<details><summary>88. what is heartbeating in vsphere HA    <br></summary></details>
+<details><summary>89.  which 2 types of heartbeats are used by vsphre HA    <br></summary></details>
+<details><summary>90.  what is Election process in vsphere HA   <br></summary></details>
+<details><summary>91.  how election process works in vsphere HA   <br></summary></details>
+<details><summary>92.  what is Master & Slave in vsphere HA    <br></summary></details>
+<details><summary>93. what is fault tolerance    <br></summary></details>
+<details><summary>94.  which locking technology is used by Vmware FT    <br></summary></details>
+<details><summary>95.  what is licensing limits in VMware Fault Tolerance   <br></summary></details>
+<details><summary>96. what is DRs    <br></summary></details>
+<details><summary>97.  what are the DRs Rules   <br></summary></details>
+<details><summary>98. What is the use of Update Manager    <br></summary></details>
+<details><summary>99. what is the process of upgrading vsphere components or infrastructure<br></summary></details>
