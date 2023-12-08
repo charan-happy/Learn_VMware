@@ -61,7 +61,7 @@
 <details><summary>61. what is vsphere Replication <br></summary></details>
 <details><summary>62. what is SRM <br></summary></details>
 <details><summary>63. what is VMware NSX <br></summary></details>
-<detais>><summary>64. what are key features of VMware NSX <br></summary></details>
+<details><summary>64. what are key features of VMware NSX <br></summary></details>
 <details><summary>65. what are the ways of Installing ESXI<br></summary></details>
 <details><summary>66. what are the ways of Upgrading ESXi <br></summary></details>
 <details><summary>67. what is customized ESXI ISO<br></summary></details>
