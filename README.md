@@ -226,13 +226,108 @@ Architecture means the type processor used by the server.
 ### Networks
 
 ![Network components](/images/Network_components.png)
+
+A network connects computers, servers, and other devices to each other so they can communicate and transfer data. The data center network is critical component of the data center.
+
+In data center, the programs, websites, and other applications that needs to be delivered to consumers are kept in the data center storage.
+
+A data center network is made up of many hardware components such as cables, routers, and switches, to name few, that create a 'net' of communication paths.
+
+Connecting servers and the storage to a network allows both servers and storage to communicate with each other as well as with other networks.
+
+let's understand the hardware involved in networking :
+
+1. Router : A device that is part of a network that can send/receive data from its network to another. once data reaches the desired network, the router sends the data to the right location in the network using IP address. Devices are connected to the internet using a router.
+
+2. Switch : connects devices to each other within a network. The switch is responsible for creating the communication paths while the router directs where on the paths the information needs to go.
+   
+3. NIC : short for network interface controller, NIC is a piece of networking hardware built with ethernet technology that is part of, or attaches to, the motherboard and connects to a computer to network
+   
+4. Ethernet Cable : a type of networking cable that physically connects devices such as servers, routers, and switches on a network using ethernet protocol.
+   
+5. Port : In computer networks, ports are the interfaces that serve as the point of communication between the network  and a device that is on the network. For EX: an ethernet outlet on a server is a port that can be connected to a router or switch port.
+   
+To simply put, Router and the switch create the network and the ethernet cable and NIC allows the device to join the network.
+
+A network can have different layouts and range. In fact, it is the scope of the layout itself that identifies what type a network is. The type of network that normally uses Ethernet cables is called **LAN** short for Local Area Network. This type of network usually used in one location, such as office, home or school. 
+
+There are other networks that reach further such as WANs(wide area networks) but linking up to a WAN usually requires renting access to a line that transmits data by wire, radio or optic cables. Businesses that have mulitple locations usually use WAN.
+
+In order for the data to understand where it needs to go on the network, a network implements a protocol to direct the information to its destination. A protocol is a set of rules that dictates how information is exchanged between communication devices, in the case of a data center, between a server and a data storage device. These rules are like a language. Only devices with similar protocols understand the rules of that language and therefore can transmit information (data) to each other. As with any set of rules, they need to be applied somehow, and in the case of data center networks, they are applied through the hardware mentioned above as well as through software.
+
+![Network topology](/images/Network_protocol.png)
+
+- The protocol most commonly used for a data center network is called TCP/IP. Transmission Control Protocol/ Internet Protocol (TCP/IP) is a program that computers use to send messages to each other. Like virtualization, a network communication protocol can be explained by breaking it down into different layers. The TCP layer of the program breaks the content of the message a computer sends into smaller bits of information called packets that are sent and received between computers. The IP layer of the message is the address of the computer the message is being sent to. Think of these two parts as a letter being sent in the mail. The address is written on the envelope, and the message is what is inside the envelope.
+
+- Every computer on the network has an IP address. In a traditional hardware-based data center, a network cable connects to a router, and the router then connects to a switch, which connects to the servers. As many servers as there are ports on the switch can be connected. The router itself is actually a small computer that stores the IP addresses for each IP network in its memory. When a signal comes into the router, the router reads the IP address and sends it to the correct port attached to the IP network where the destination computer is located.
+
+- On a network, the way in which the computers, servers, storage, and network hardware are arranged is referred to as the network topology. In other words, the topology is a map of the network that indicates where the servers or other devices like storage or printers are attached physically on the network. 
+
+![Network_topology](/images/Network_topology.png)
+
 ### storage
 
+![VC_Datacenter](/images/Virt_DC.png)
+
+Availability refers to the expectation that a device is running rather than  experiencing downtime. if you lose a flash drive it can be inconvenient, but if a data center storage device goes offline, the business and enterprises that rely on that storage will suffer.
+
+the method used to improve the availability of storage is called **redundancy**.
+
+Redundancy can be implemented in such a way that the system will create a copy of data, saved in another location, that may be accessed in the event that the original location becomes corrupted or breaks down. 
+
+Datastores can be deployed in two methods. 1. Direct-attached Storage and Network-based storage.
+
+- pending Raid and some other topics in storage
 ### Building Datacenter
+
+To simply Put, a company building a datacenter can use one of two infrastructure models: a converged infrastructure or a best-of-breed infrastructure.
+
+A **converged** infrastructure integrates all the datacenter hardware and software components into a single package from a provider. The provider offers a preconfigured unit optimized for the datacenter being built.
+
+A **Best-of-breed** infrastructure is when the datacenter has different top of the line components such as best-of-breed servers, storage devices, and networking equipment from multiple vendors.  EX: HP servers, cisco networking devices, IBM storage devices .
+
+this type of infrastructure results in lower cost from competitive pricing. Prevents vendor lockin and enables the repurposing of existing data center components.
+
+![datacenter toploly](/images/data-center-topology_highres.png)
+
+**zombies** are computer assets, such as VMs, storage, and servers that are no longer doing useful work. These systems are still running. Using energy, and incurring costs instead of being shutdown.
+
+
+The purpose of the data center is making applications available to users. Businesses use the data center to support the applications they need with the goals of reducing the total cost of Information Technology (IT) and ensuring applications are available when needed. The goal of virtualizing the data center is to address both cost savings for an organization and availability to the user.
+
+The process of virtualizing a data center is intended to take it from hardware defined data center to what is called Software defined data center (SDDC) also known as virtual data center.
+
 
 ### vSphere
 
+Vmware Vsphere is a suit of virtualization technology designed for larger enterprise data management.
+
+![vsphere structure](/images/data-center-topology_highres.png)
+
+Main components of Vsphere :
+
+1. ESXI - Vmware's Type 1(bare metal) hypervisor
+2. vCenter - vSphere's management layer
+3. vSphere client - A program that configures the vcenter, host and operates in virtual machines
+4. vSphere Host Client - A program that only configures the host and operates its virtual machines
+   
+   ![vsphere client](/images/CVC_vSphere_Clients.png)
+
+ ESXI :
+ ------
+  ![Esxi](/images/esxi-servers.jpg)
+
+- The 3 things tht makes up vsphere.
+
+EXSI is a type=-1 hypervisor software that is installed directly onto a physical server and creates the foundation for the virtual layer. ESXI enables the server hardware to be partitioned into multiple logical computers, which you now know are VMs.
+
+Virtual machines run on and consume resources from ESXI, but ESXI is running on top of the physical server itself to help administer the hardware resources.  ESXI is like a command center that all the applications on the Vm talk to, then it turns around and tells the hardware what to do.
+
+
+
+
 ### server virtualization
+
 
 ### storage virtualization
 
