@@ -275,9 +275,152 @@ the method used to improve the availability of storage is called **redundancy**.
 
 Redundancy can be implemented in such a way that the system will create a copy of data, saved in another location, that may be accessed in the event that the original location becomes corrupted or breaks down. 
 
-Datastores can be deployed in two methods. 1. Direct-attached Storage and Network-based storage.
+Datastores can be deployed in two methods. `1. Direct-attached Storage and 2. Network-based storage`.
 
 #### RAID
+
+- To ensure availability in the data center, a type of data storage technology called `RAID (Redundant Array of Independent Disks)` is used. RAID is multiple storage drives (two or more), hard drives for example, that are linked together to create one single large volume of storage. This results in increased performance and/or data redundancy.
+
+- There are different types, or as they are usually referred to, levels, of RAID and depending on which level of RAID is used (i.e., RAID 0, 1, 4, 5, or 10), storage availability and redundancy are achieved using one or a combination of three methods; mirroring, striping, and parity.
+
+When the mirroring method is used, two same-sized drives are linked together and what gets written to the first also gets written to the second, creating an exact copy for redundancy purposes.
+
+![RAID1](/Images/RAID_1.png)
+
+- With the striping method, on the other hand, the data being written traverses along the linked drives, so no drives are identical. The linked drives function as one single drive, and the data is ‘striped’ between the two as shown by the RAID 0 example in the image below. The benefit of striping is that it increases capacity and results in faster performance because it takes less time to write the data a single time to one disk (in this case, two disks functioning as one) than it does to write the data multiple times to create a copy on each of the linked drives, as is done using the mirroring method.
+
+- Therefore, in the case of RAID 0, the desired outcome is performance rather than redundancy. 
+
+- At first, this may not seem like a desirable storage option, but there are some tasks, such as graphic design or media compilation that require higher performing storage like RAID 0 for a temporary amount of time.
+
+![RAID 0](/Images/RAID_0.png)
+
+Mirroring offers redundancy as opposed to striping because, as shown in the above image, if one drive goes down, all the data is preserved on the other disk. One way to get the best of both methods is with a RAID 10 (1+0) or a RAID 0+1 storage configuration, which incorporates both mirroring and striping.
+
+Another RAID technique, called parity, is a way of checking if there are errors in a string of data. Parity is used in certain RAID configurations by adding a data bit at the end of a string of data being written to a disk.
+
+`01010101 0`
+
+The first set of characters 01010101 of the example data output above represent a string. After the string, the last highlighted character 0 displayed above is the parity bit.
+
+The example above uses even parity. A parity bit of 0 means that the number of 1s, including the parity bit, is even. This is confirmed by the four 1s in the string. If one of the 1s was accidentally switched to a 0 during the transmission, the number of 1s including the parity bit would be odd and therefore incorrect. If the data string does not match the data bit, it means that there was an error in the transmission of the data.
+
+`01010101 1`
+
+In the example data output above, the number of 1s including the parity bit 1, is five, and therefore odd.
+
+RAID levels that use parity, assign one of the disks in the volume as a parity disk where the parity information is stored. Should a disk failure occur, the parity information can be used to recover the lost data from the failed disks.
+
+
+
+![Raid_5](/Images/RAID_5.png)
+
+#### File level and block level storage
+
+The difference between block level storage and file level storage is how the storage is organized and accessed on the storage device and from other devices, such as servers.
+
+- In `block level storage`, a storage device such as a hard disk drive (HDD) is identified as something called a `storage volume`.  A storage volume can be treated as an individual drive, a “block”. This gives a server's operating system the ability to have access to the raw storage sections. The storage blocks can be modified by an administrator, adding more capacity when necessary, which makes block storage fast, flexible, and reliable.
+
+File level storage is a type of storage that has a file system installed directly onto it where the storage volumes appear as a hierarchy of files to the server, rather than blocks. This is different from block type storage, which doesn't have a default file system and needs to have an administrator create one in order for non-administrator users to navigate and find data.
+
+![Block & File level storage](/Images/block-level_storage.png)
+
+One benefit of using file storage is that it is easier to use. Most people are familiar with file system navigation as opposed to storage volumes found in block level storage, where more knowledge about partitioning is required to create volumes.
+
+Partitioning is the creation of sections on a disk that are set aside for certain files or software. Based on the operating system used, the partitions will be assigned a name or letter. For example, the letter C: is given to the main partition on Windows devices. This may seem familiar as most PCs purchased from a store have pre-configured hard drives with default partitions. However, for block storage devices purchased on their own, the user will most likely need to partition the drive before a file system can be installed as they do not come pre-configured with default partitions.
+
+
+
+#### Direct attached storage
+
+Direct Attached Storage (DAS) means that a physical storage device is directly attached to a server or personal computer. The hard drive of a laptop is a type of DAS because it fits the definition of a storage device directly attached to a personal computer.
+
+
+![Direct Attached Storage](/Images/DAS.png)
+
+he following are types of storage that can be used as DAS:
+
+`Hard Disk Drive (HDD)` - Uses magnetic rotating disks to hold data, which is then read by a rotating arm that reads and writes the data onto the disk. Many personal computers have HDDs, or as they are usually referred to, “hard drives”.
+
+`Solid State Drive (SSD)` - Made out of a collection of electronic circuits (chips) that store and transmit data. Unlike hard disk drives, solid-state drives don’t have any moving parts like the arm of the HDD that has to rotate to find the right location on a disk. This means that SSDs are faster and more durable. Another benefit of SSDs is their efficiency, due to the fact that they don’t have any moving parts, so they require less energy to operate.
+
+`Optical Disk Drive (ODD)` - Uses lasers to read and write data onto optical disks. A good example of a type of media that uses an optical disk drive is a DVD player. Although most optical disks can only hold 50GB or less as opposed to the commonly available 256GB to 1TB (terabyte) HDDs and SSDs, ODDs are convenient because they are inexpensive and highly portable.
+⁠⁠​​ 
+
+The types of storage mentioned above have different benefits, but each has the ability to store data and can be used as an external storage option. The direct attached storage architecture is beneficial for personal use or for small businesses that need to purchase a set amount of data storage at a time, and it is simple enough not to need a significant IT management presence. The goal is to grow data storage in increments by simply adding additional drives when needed.
+
+In order to set up DAS, the storage device needs to have the correct technology employed so it can speak the same language as the server it’s attached to. This "language" is called a `protocol`. 
+
+On a storage device, the protocol can be identified by the ports and outlets it uses. An example would be the USB (Universal Serial Bus) protocol, which can be identified by the USB ports and cables. Because storage devices come in various protocols, the server may need an adapter to communicate with the storage device so users can store and access data from it.
+
+The protocol adapter for servers is called an HBA (host bus adapter). This is a piece of hardware, similar in appearance to a card with a port for a plug, which is plugged-in to a server and adapts the server to the storage device’s protocol (language). Once the HBA is attached to the server, and the cables with the right protocol are used, a storage device can be attached, allowing the DAS to now be able to talk to the server. The protocols most commonly used for DAS are SCSI, SATA, SAS, and USB. So, if a SCSI protocol HBA is attached to the server, and the HBA is connected to a SCSI storage device with cables, it will be able to transmit data from the server to the storage and vice versa.
+
+One downside of using DAS is that the extra storage can only be used by the server it's attached to .
+
+#### Network attached storage
+
+NAS, short for Network Attached Storage, involves attaching a storage device to a network that, in turn, allows storage to be accessed and distributed on the network to servers attached to the same network. The NAS storage normally connects to the network through an Ethernet protocol and has its own IP address.
+
+![NAS](/Images/NAS_storage.png)
+
+NAS is the easiest to use because it is file level storage.
+
+The protocols used for transmitting data over a NAS differ from those used for DAS because the storage is a type of file level rather than block level storage. NAS is connected to a router and/or switch, which connects it to a Local Area Network (LAN). To communicate to servers on the LAN, the storage uses a TCP/IP (Transmission Control Protocol/Internet Protocol), which is the basic internet protocol, or language data is transmitted in through the internet.
+
+Because the data shared on a NAS is in files, any system trying to access data needs to follow a file path. For example, `/mystoragedevice/Public/mydata/file1.txt` is how a server would get to file1 in the mydata folder on the storage device called `mystoragedevice`.
+
+Because files are shared on a network, it is not enough to just connect the device to the network; the file system also needs to follow a network protocol to be accessed. For example, on the internet, HTTP is a protocol and usually comes before a web address. Without using `http://`, the website will not come up. This is usually filled in for you by the browser if you forget, but if you look at the address bar, it will be there. Files on a network are like websites; the correct protocol and file path must be used in order to access them. Commonly used file system protocols used on NAS devices are NFS (Network File System) and CIFS (Common Internet File System). NFS is commonly used with Linux and Unix based operating systems while CIFS is used for file sharing on Microsoft based machines.
+
+One way to tell which protocol, NFS or CIFS, is being used, is by looking at the path name. NFS files are accessed by using the format `<IP Address>:/<DriveVolumeName>/<NameofShare>` while CIFS files use the format `//<IP Address>/<NameofShare>` .
+
+#### Storage area network
+
+A SAN (Storage Area Network) is one or many block level storage devices clustered together that are attached to a high-speed network and that applications running on the servers, can connect to in order to access the data. A characteristic of a SAN is that even though the storage is in another physical location, to the server, it looks and acts as if it was attached as a DAS.
+
+A SAN requires that servers trying to connect to it also have certain protocols. Because a SAN requires a high-speed connection, faster protocols such as** iSCSI, Fiber Channel (FC),** and more recently **Fiber Channel over Ethernet (FCoE)** are used to transmit data at higher speeds on the TCP/IP network (internet).
+
+This ability for storage to be shared outside of a local network makes a SAN an efficient storage type for larger companies whose employees need to access stored data from more than one location. Because a SAN requires higher speeds and a wider network area, it can be more expensive to set up but the ability to modify the size of the storage from anywhere at any time, called scalability, outweighs the costs for big organizations.
+
+|NAS | SAN|
+| --- | --- |
+| It is a storage that connects to a network | It is a network of storage that servers can connect to. |
+| It manages storage as a file system directly | It doesn't manage storage as a file system directly |
+| It is faster & efficient | It is slower & inefficient |
+|||
+
+![SAN](/Images/SAN.png)
+
+#### Storage protocol
+
+Many types of storage protocols are available for configuring data center storage. The most efficient protocol for a particular data center depends on factors such as the size of the data center, types of servers used, and available budget. For example, some protocols ensure faster data transmission speeds but cost more to implement. Configuring storage with protocols that match the amount of data traffic a data center wants to handle can increase efficiency and ensure data gets to customers.
+
+| Protocol | Application |
+| --- | --- |
+|SCSI (Small Computer System Interface) | Medium- sized blade servers, Enterprise servers, DAS|
+|SATA (Serial Advanced Technology Attachment) |Small-sized tower server, DAS |
+|eSATA (external SATA)| Small-sized tower server, DAS|
+|SAS (Serial Attached SCSI)| Medium-sized blade servers, Enterprise servers, DAS |
+| FC (Fiber Channel) (single-mode) (SMF)| Enterprise servers, SAN |
+|FC (Fiber Channel) (multi-mode) (MMF) | Enterprise servers, SAN |
+|FCoE (Fiber channel over Ethernet) | Enterprise servers, SAN |
+| ISCSI (internet small computer system Interface) |Enterprise Servers, NAS |
+|||
+
+#### Storage provisioning
+
+The cost of managing data center storage can rise quickly when you consider the expense of purchasing new devices, along with operating costs such as energy expenses, as well as staff to monitor data capacity and maintain the hardware. Therefore, using and allocating storage in a data center needs to be done in the most efficient way possible without affecting reliability, making sure data is delivered to the customer.
+
+Provisioning is the process of strategically assigning storage space to servers based on the capacity of the storage device(s), availability, and performance requirements. Storage provisioning can be performed in two ways, traditional (thick provisioning) and virtual (thin provisioning).
+
+In order for a disk to be provisioned, the storage volumes are partitioned to create logical disks. Simply put, a logical disk is a virtualized disk. The capacity of a logical disk physically exists in a device somewhere, but the logical disk itself does not physically exist.
+
+Provisioning requires that disk space is turned into logical rather than physical units because physical disk space cannot be shifted around strategically as quickly as logical space can be. Remember, logical disks are data representations of physical disks, not physical hardware.
+
+In traditional provisioning, also called thick provisioning, disk space is strategically pre-allocated to a server or a virtual machine. This means that the logical space provided by partitioning is equal to the amount of actual physical space set aside on the disk.
+
+![Thick provisioning](/Images/Thick_virtual_disk.png)
+
+For example, when you set up an operating system like Windows, a certain amount of storage space is provisioned for certain files and programs. With this method, you first estimate how much storage the program will need for its entire life cycle. You then provision a fixed amount of storage space to the disk in advance.
 
 ### Building Datacenter
 
