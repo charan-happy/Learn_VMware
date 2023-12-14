@@ -469,6 +469,7 @@ Virtual machines run on and consume resources from ESXI, but ESXI is running on 
 
 The ESXI baremetal architecture consists of two main parts. when the server is powered up, the two parts are loaded in sequence. The first part is called the  unix microkernel, and the second part is called the VMware kernel.
 
+
 #### vcenter
 
 ![vcenter architecture](/images/vcenter_manage.png)
