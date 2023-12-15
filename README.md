@@ -53,6 +53,8 @@ Below are the list of common hardware components
 1. processor/cpu
    
    ![processor](/images/Processor%20CPU.png)
+
+   
 2. RAM
    ![RAM](images/Ram.png)
 
