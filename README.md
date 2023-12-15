@@ -52,7 +52,7 @@ Below are the list of common hardware components
 
 1. processor/cpu
    
-   ![processor](/images/Processor%20CPU.png)
+   ![processor](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Microchip.png)
 
    
 2. RAM
