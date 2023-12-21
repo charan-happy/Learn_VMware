@@ -81,7 +81,7 @@ Software is what allows our hardware to perform activities that we value such as
 
 **Virtualization** is the layer of technology that goes between the physical hardware of a device and the operating system (software) and creates one or many copies of the device  
 
-![virtual Layers](/images/Virt_layers_desk.png)
+![virtual Layers](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Virt_layers_desk.png)
 ### virtual Machine
 
 - A software computer that is, like a physical computer runs an Os and applications.
@@ -92,7 +92,7 @@ virtualization layer interacts directly with the hardware
 
 A VM also requires the same components a physical computer needs such as a keyboard, a mouse, a CPU, RAM and more to be fully functional.
 
-![Vm components](/images/VM_components.png)
+![Vm components](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/VM_components.png)
 
 The objective of virtualization is to have an instance (a copy) of something in a reality(virtual) on top of our reality(hardware)
 
@@ -134,11 +134,11 @@ To make it possible for a user to interact with the bare-metal hypervisor, the h
 
 VMware version of TYPE-1 hypervisor is **ESXI**, and the management layer software is called **vcenter**
 
-![Type-1 Hypervisor](/images/Type1_Hypervisor_Layers.png)
+![Type-1 Hypervisor](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Type1_Hypervisor_Layers.png)
 
 - The second method of virtualization is called hosted virtualization.  To setup a computer with hosted virtualization, a type 2 hypervisor called hosted hypervisor needs to be installed on top of the operating system that already exists, the host os, not on top of hardware like a baremetal hypervisor
 
-![Type-2 Hypervisor](/images/Type2_Hypervisor_Layers.png)
+![Type-2 Hypervisor](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Type2_Hypervisor_Layers.png)
 
 the hosted(type 2) hypervisor depends on the host OS to provide direct access to the computer's hardware resources to manage those resources to create virtual machine.
 
@@ -166,7 +166,7 @@ There are 2 different hosted hypervisors available to download through VMware; v
 
 ### snapshots
 
-![snapshot](/images/Host_VM_Base_snapshot1.png)
+![snapshot](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Host_VM_Base_snapshot1.png)
 
 - the snapshot feature is most useful when you want to preserve the state of the virtual machine so you can return to the same state repeatedly. To simply save the current state of your virtual machine and then pick up the work later with the virtual machine in the same state it was when you stopped, suspend the virtual machine.
   
@@ -197,7 +197,7 @@ The data center performs three main functions: it processes, stores, and transmi
 
 ### compute systems
 
-![Data Center](/images/Virt_DC.png)
+![Data Center](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Virt_DC.png)
 
 | Computer | Server |
 | --- | --- |
@@ -207,7 +207,7 @@ The data center performs three main functions: it processes, stores, and transmi
 | It comes with more input/output devices such as mouse,keyboard and monitor. So, user can interact with the system | Servers do not usually include components for direct user interaction |
 |||
 
-![server types](/images/Server%20Types.png)
+![server types](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Server%20Types.png)
 
 Datacenter servers fall under 3 types. Tower, rack-mounted, and blade. The **tower** system is traditional PC tower. More likely these can be a personal computer
 
@@ -227,7 +227,7 @@ Architecture means the type processor used by the server.
 
 ### Networks
 
-![Network components](/images/Network_components.png)
+![Network components](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Network_components.png)
 
 A network connects computers, servers, and other devices to each other so they can communicate and transfer data. The data center network is critical component of the data center.
 
@@ -257,7 +257,7 @@ There are other networks that reach further such as WANs(wide area networks) but
 
 In order for the data to understand where it needs to go on the network, a network implements a protocol to direct the information to its destination. A protocol is a set of rules that dictates how information is exchanged between communication devices, in the case of a data center, between a server and a data storage device. These rules are like a language. Only devices with similar protocols understand the rules of that language and therefore can transmit information (data) to each other. As with any set of rules, they need to be applied somehow, and in the case of data center networks, they are applied through the hardware mentioned above as well as through software.
 
-![Network topology](/images/Network_protocol.png)
+![Network topology](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Network_topology.png)
 
 - The protocol most commonly used for a data center network is called TCP/IP. Transmission Control Protocol/ Internet Protocol (TCP/IP) is a program that computers use to send messages to each other. Like virtualization, a network communication protocol can be explained by breaking it down into different layers. The TCP layer of the program breaks the content of the message a computer sends into smaller bits of information called packets that are sent and received between computers. The IP layer of the message is the address of the computer the message is being sent to. Think of these two parts as a letter being sent in the mail. The address is written on the envelope, and the message is what is inside the envelope.
 
@@ -265,11 +265,11 @@ In order for the data to understand where it needs to go on the network, a netwo
 
 - On a network, the way in which the computers, servers, storage, and network hardware are arranged is referred to as the network topology. In other words, the topology is a map of the network that indicates where the servers or other devices like storage or printers are attached physically on the network. 
 
-![Network_topology](/images/Network_topology.png)
+![Network_topology](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Network_protocol.png)
 
 ### storage
 
-![VC_Datacenter](/images/Virt_DC.png)
+![VC_Datacenter](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Virt_DC.png)
 
 Availability refers to the expectation that a device is running rather than  experiencing downtime. if you lose a flash drive it can be inconvenient, but if a data center storage device goes offline, the business and enterprises that rely on that storage will suffer.
 
@@ -287,7 +287,7 @@ Datastores can be deployed in two methods. `1. Direct-attached Storage and 2. Ne
 
 When the mirroring method is used, two same-sized drives are linked together and what gets written to the first also gets written to the second, creating an exact copy for redundancy purposes.
 
-![RAID1](/Images/RAID_1.png)
+![RAID1](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/RAID_1.png)
 
 - With the striping method, on the other hand, the data being written traverses along the linked drives, so no drives are identical. The linked drives function as one single drive, and the data is ‘striped’ between the two as shown by the RAID 0 example in the image below. The benefit of striping is that it increases capacity and results in faster performance because it takes less time to write the data a single time to one disk (in this case, two disks functioning as one) than it does to write the data multiple times to create a copy on each of the linked drives, as is done using the mirroring method.
 
@@ -295,7 +295,7 @@ When the mirroring method is used, two same-sized drives are linked together and
 
 - At first, this may not seem like a desirable storage option, but there are some tasks, such as graphic design or media compilation that require higher performing storage like RAID 0 for a temporary amount of time.
 
-![RAID 0](/Images/RAID_0.png)
+![RAID 0](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/RAID_0.png)
 
 Mirroring offers redundancy as opposed to striping because, as shown in the above image, if one drive goes down, all the data is preserved on the other disk. One way to get the best of both methods is with a RAID 10 (1+0) or a RAID 0+1 storage configuration, which incorporates both mirroring and striping.
 
@@ -315,7 +315,7 @@ RAID levels that use parity, assign one of the disks in the volume as a parity d
 
 
 
-![Raid_5](/Images/RAID_5.png)
+![Raid_5](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/RAID_5.png)
 
 #### File level and block level storage
 
@@ -325,7 +325,7 @@ The difference between block level storage and file level storage is how the sto
 
 File level storage is a type of storage that has a file system installed directly onto it where the storage volumes appear as a hierarchy of files to the server, rather than blocks. This is different from block type storage, which doesn't have a default file system and needs to have an administrator create one in order for non-administrator users to navigate and find data.
 
-![Block & File level storage](/Images/block-level_storage.png)
+![Block & File level storage](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/block-level_storage.png)
 
 One benefit of using file storage is that it is easier to use. Most people are familiar with file system navigation as opposed to storage volumes found in block level storage, where more knowledge about partitioning is required to create volumes.
 
@@ -338,7 +338,7 @@ Partitioning is the creation of sections on a disk that are set aside for certai
 Direct Attached Storage (DAS) means that a physical storage device is directly attached to a server or personal computer. The hard drive of a laptop is a type of DAS because it fits the definition of a storage device directly attached to a personal computer.
 
 
-![Direct Attached Storage](/Images/DAS.png)
+![Direct Attached Storage](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/DAS.png)
 
 he following are types of storage that can be used as DAS:
 
@@ -363,7 +363,7 @@ One downside of using DAS is that the extra storage can only be used by the serv
 
 NAS, short for Network Attached Storage, involves attaching a storage device to a network that, in turn, allows storage to be accessed and distributed on the network to servers attached to the same network. The NAS storage normally connects to the network through an Ethernet protocol and has its own IP address.
 
-![NAS](/Images/NAS_storage.png)
+![NAS](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/NAS_storage.png)
 
 NAS is the easiest to use because it is file level storage.
 
@@ -390,7 +390,7 @@ This ability for storage to be shared outside of a local network makes a SAN an 
 | It is faster & efficient | It is slower & inefficient |
 |||
 
-![SAN](/Images/SAN.png)
+![SAN](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/SAN.png)
 
 #### Storage protocol
 
@@ -420,7 +420,7 @@ Provisioning requires that disk space is turned into logical rather than physica
 
 In traditional provisioning, also called thick provisioning, disk space is strategically pre-allocated to a server or a virtual machine. This means that the logical space provided by partitioning is equal to the amount of actual physical space set aside on the disk.
 
-![Thick provisioning](/Images/Thick_virtual_disk.png)
+![Thick provisioning](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Thin_Provision%20%26%20Thick_provision.png)
 
 For example, when you set up an operating system like Windows, a certain amount of storage space is provisioned for certain files and programs. With this method, you first estimate how much storage the program will need for its entire life cycle. You then provision a fixed amount of storage space to the disk in advance.
 
@@ -434,7 +434,7 @@ A **Best-of-breed** infrastructure is when the datacenter has different top of t
 
 this type of infrastructure results in lower cost from competitive pricing. Prevents vendor lockin and enables the repurposing of existing data center components.
 
-![datacenter toploly](/images/data-center-topology_highres.png)
+![datacenter toploly](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/data-center-topology_highres.png)
 
 **zombies** are computer assets, such as VMs, storage, and servers that are no longer doing useful work. These systems are still running. Using energy, and incurring costs instead of being shutdown.
 
@@ -448,7 +448,7 @@ The process of virtualizing a data center is intended to take it from hardware d
 
 Vmware Vsphere is a suit of virtualization technology designed for larger enterprise data management.
 
-![vsphere structure](/images/data-center-topology_highres.png)
+![vsphere structure](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/data-center-topology_highres.png)
 
 Main components of Vsphere :
 
@@ -457,11 +457,11 @@ Main components of Vsphere :
 3. vSphere client - A program that configures the vcenter, host and operates in virtual machines
 4. vSphere Host Client - A program that only configures the host and operates its virtual machines
    
-   ![vsphere client](/images/CVC_vSphere_Clients.png)
+   ![vsphere client](/images/CVC_vSphere_Clients.pn)
 
  ESXI :
  ------
-  ![Esxi](/images/esxi-servers.jpg)
+  ![Esxi](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/esxi-servers.jpg)
 
 - The 3 things tht makes up vsphere.
 
@@ -474,7 +474,7 @@ The ESXI baremetal architecture consists of two main parts. when the server is p
 
 #### vcenter
 
-![vcenter architecture](/images/vcenter_manage.png)
+![vcenter architecture](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/vcenter_manage.png)
 
 In vsphere, the management layer is called vCenter, a software that is installed on a dedicated server to specifically manage ESXI server and other components of a Virtualized data center
 
@@ -484,7 +484,7 @@ To connect vCenter server to manage vCenter and ESXI host, we use vSphere cient.
 
 when ESXI is installed, it creates the management layer for ESXI host, but that layer doesnot automatically know what to tell the data center to do. This is because the management server is just hardware and software; It needs to be programmed by the real people (administrators) who know what settings to adjust in order to meet data consumption demands. VMware created a user interface called vSphere Host Client to directly manage an ESXI host.
 
-![vSphere Host client ](/images/vsphere_host_client.png)
+![vSphere Host client ](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/vsphere_host_client.png)
 
 the vsphere Host Client is a graphical user interface program installed on the ESXI host that allows data center administrators to connect to ESXI remotely from any windows PC. The VMware Host Client allows administrators to perform numerous administrative tasks and monitor the host or virtual machines at the host level. 
 
@@ -512,7 +512,7 @@ Virtualized Storage is designed to give VMs the adequate amount of storage neede
 
 virtualizing storage takes storage capacity and pools it together in the virtual data center and then distributes that capacity to the VMS.
 
-![storage virtualization](/images/storage_virt_1.png)
+![storage virtualization](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/storage_virt_1.png)
 
 Virtual  storage is represented logically. Logical computing basically means represented as a software rather than hardware. 
 
@@ -520,7 +520,7 @@ Virtual  storage is represented logically. Logical computing basically means rep
 
 - LUN is the number used to identify the storage device's logical units, however, it is commonly used to describe the logical drive itself.
 
-![storage virtualization](/images/storage_virt_2.png)
+![storage virtualization](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/storage_virt_2.png)
 
 Creating virtual storage is a multistep process, The storage capacity needs to be measured and added to a container before being poured into the pool. LUNs are smaller units, which are put into a larger unit called "volume". The volumes are then turned into a unit called "datastore", which gets virtualized.
 
@@ -528,7 +528,7 @@ Creating virtual storage is a multistep process, The storage capacity needs to b
 
 A method for setting up a storage resource for virtualized servers to access and save data is grouping logical storage into something called a datastore
 
-![datastores](/images/datastores.png)
+![datastores](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/datastores.png)
 
 In order to protect virtual server's data, the virtual memory is setup in a different location. Normally, virtual data is setup in two locations. This way, if one storage stops working, the virtual server simply switches to using another virtual storage server.
 
