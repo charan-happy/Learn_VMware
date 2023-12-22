@@ -457,7 +457,7 @@ Main components of Vsphere :
 3. vSphere client - A program that configures the vcenter, host and operates in virtual machines
 4. vSphere Host Client - A program that only configures the host and operates its virtual machines
    
-   ![vsphere client](/images/CVC_vSphere_Clients.pn)
+   ![vsphere client](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/CVC_vSphere_Clients.png)
 
  ESXI :
  ------
@@ -544,7 +544,7 @@ In order to access the datastore, it is common to install a file system onto the
 
 - The virtual machine configuration files are stored as VMX files with the .vmx extension. To the user, these files, along with .vmdk files, can be found in the Documents folder of the host machine
 
-![vm_storage](/images/vm_storage.png)
+![vm_storage](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/vm_storage.png)
 
 #### Thin provisioning
 
@@ -555,9 +555,9 @@ In order to access the datastore, it is common to install a file system onto the
 
 - we can also add storage space to a virtual machine beyond the provisioned amount by expanding its virtual hard disk. When you expand a virtual hard disk, the added space is not immediately available to the virtual machine. To make the added space available, you must use a disk management tool to increase the size of the existing partition on the virtual hard disk to match the expanded size.
 
-![Datastore provision for ESXI](/images/Thin_Provision%20&%20Thick_provision.png)
+![Datastore provision for ESXI](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Thin_Provision%20%26%20Thick_provision.png)
 
-![Thick virtual disk](/images/Thick_virtual_disk.png)
+![Thick virtual disk](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Thick_virtual_disk.png)
 
 - When you expand the size of a virtual hard disk, the sizes of partitions and file systems are not affected. As an alternative to expanding a virtual hard disk, you can instead add a new virtual hard disk to the virtual machine.
 
@@ -569,7 +569,7 @@ A traditional network is made up of a router, a switch, NICs , ports, and cables
 
 The virtual network shares the router and NIC (network interface card/adapter) with the physical network, but the other components are virtualized. The first layer of the virtual network is the virtualized switch called a vSwitch, which links up the virtual devices
 
-![virtual network](/images/virtual%20Network.png)
+![virtual network](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/virtual%20Network.png)
 
 - Virtual switches allow virtual machines on the same ESXi server host to communicate with each other using the same protocols that would be used over physical switches, without the need for additional networking hardware. A virtual machine can be configured with one or more virtual Network Interface Cards (NIC), also referred to as virtual Ethernet adapters. Each virtual NIC responds to the standard Ethernet protocol as would a physical NIC and has its own IP address and MAC address. As a result, virtual machines have the same properties as physical machines from a networking standpoint.
 
@@ -577,7 +577,7 @@ The virtual network shares the router and NIC (network interface card/adapter) w
 
 Another advantage of using virtual networks is the ability to establish VLANs.
 
-![vlan visual](/images/vlan_visual.png)
+![vlan visual](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/vlan_visual.png)
 
 - A VLAN, short for virtual local area network, enables a single physical LAN (local area network) to be further segmented so that groups of ports are isolated from one another as if they were on physically different network segments. VLANs can be used to break up very large LANs into smaller virtual LANs
 -  This may be useful to control network traffic such as broadcasts (another name often used for a VLAN is a Broadcast Domain). A broadcast is a method of sending data packets to every device on a network, like sending a text message to every contact on your Mobile. Broadcasts are commonly used by a router to request information about devices on the network or when a new computer is added to the network as a way to “get attention” to let other computers and devices know it’s there.
@@ -593,7 +593,7 @@ The three main network types used to setup VMs with a connection.
 
 - With bridged networking, the virtual network adapter (vnic) in the virtual machine connects to a physical network adapter (NIC) in the host system. The host network adapter enables the virtual machine to connect to the LAN (Local Area Network) that the host system uses. Bridged networking works with both wired and wireless host network adapters.
 
-![Bridge Network](/images/Bridge%20Network.png)
+![Bridge Network](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Bridge%20Network.png)
 
 - Bridged networking configures the virtual machine as a unique identity on the network, separate from and unrelated to the host system. The virtual machine is a full participant in the network. It has access to other machines on the network, and other machines on the network can contact it as if it were a physical computer on the network.
 
@@ -609,7 +609,7 @@ Incoming network traffic is transmitted in the form of data packets. The NAT dev
 
 The topology of a NAT network generally involves a VM connected to a virtual network interface card (vnic) which allows it to connect to the virtual switch (vswitch). The vswitch is also connected to a NAT device that translates the IP addresses and allows port forwarding to connect to the external network.
 
-![NAT_Network](/images/NAT_Network.png)
+![NAT_Network](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/NAT_Network.png)
 
 **Host-only Network**
 
@@ -617,7 +617,7 @@ Host-only networking creates a private internal network for the VMs to connect t
 
 Host-only networking provides a network connection between the virtual machine and the host computer, using a virtual Ethernet adapter (vnic) that is visible to the host operating system. This approach can be useful if you need to set up an isolated virtual network.
 
-![Host_only_Network](/images/Host_Network.png)
+![Host_only_Network](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Host_Network.png)
 
 If you use host-only networking, your virtual machine and the host virtual adapter are connected to a private Ethernet network. Addresses on this type of network are also provided by a DHCP server.
 
@@ -657,7 +657,7 @@ With this strategy, it could take years before deriving all the benefits and sav
 
 the second strategy, `consolidation` is the solution for moving applications that are running in the old hardware-based data center model to the virtual data center model. The technology used in order to consolidate and convert current hardware-based servers to virtual servers is known as P2V (physical to virtual) software. VMware’s P2V is called vCenter Converter. It was developed by VMware to quickly convert local and remote physical machines into virtual machines without any downtime.
 
-![P2V](/images/vcenter-converter.png)
+![P2V](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/vcenter-converter.png)
 
 #### Technology
 
@@ -720,7 +720,7 @@ There are three underlying technologies that allow vMotion to do live migration.
 
 - Third, the networks being used by the virtual machine are also virtualized by the underlying ESXi Server, ensuring that even after the migration, the virtual machine network identity and network connections are preserved. Once the destination machine is activated, VMotion pings the network router to ensure that it is aware of the new physical location of the virtual MAC address. Since the migration of a virtual machine with VMotion preserves the precise execution state, the network identity, and the active network connections, the result is zero downtime and no disruption to users
 
-![vmotion](/images/vSphere_vMotion.png)
+![vmotion](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/vSphere_vMotion.png)
 
 ### Storage vMotion
 With vSphere Storage vMotion, you can move the disks and configuration files of a running virtual machine from one datastore to another datastore without service interruption. Storage vMotion has several uses in administering virtual infrastructure, including the following examples:
@@ -729,7 +729,7 @@ Storage maintenance and reconfiguration. You can use Storage vMotion to move vir
 Redistributing storage load. You can use Storage vMotion to manually redistribute virtual machines or virtual disks to different storage volumes to balance capacity or improve performance.
 You can use Storage vMotion to migrate virtual machines when you upgrade VMFS on datastores.
 
-![vsphere_storage vmotion](/images/vSphere_Storage_vMotion.png)
+![vsphere_storage vmotion](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/vSphere_Storage_vMotion.png)
 
 ### vSphere High Availability (HA)
 
@@ -737,7 +737,7 @@ vSphere HA increases the availability of VMs by pooling servers (hosts) and the 
 
 When HA is installed, it designates one server as a master server which talks directly to vCenter. Meanwhile, a software agent (program) on each server in the resource pool creates a “heartbeat” for the host. Agents on the different hosts contact and monitor each other through the exchange of heartbeats by default every second. If a 15-second period elapses without the receipt of heartbeats from a host, and the host cannot be pinged, the host is declared as failed. The virtual machines running on the failed host are restarted on the alternate hosts with the most available unreserved capacity (CPU and memory.)The master host continuously monitors all servers in the resource pool and if it detects a loss of “heartbeat”, it initiates the restart process of all affected virtual machines on other servers.
 
-![vsphere-High Availability](/images/vSphere_HA.png)
+![vsphere-High Availability](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/vSphere_HA.png)
 
 ### vSphere Distributed Resource Scheduler (DRS)
 
@@ -745,7 +745,7 @@ vSphere Distributed Resource Scheduler automatically manages resources and power
 
 DRS implements a shared management interface so that the cluster's resources can be easily monitored and managed. DRS has to be implemented first because it is responsible for aggregating the resources of all the servers into a cluster-wide resource pool.
 
-![vsphere DRS](/images/vSphere_DRS.png)
+![vsphere DRS](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/vSphere_DRS.png)
 
 ### vSphere Storage Distributed Resource Scheduler (Storage DRS)
 
@@ -753,7 +753,7 @@ With vSphere Storage DRS, you can manage multiple datastores as a single resourc
 
 . To help resolve these issues, Storage DRS was added as a feature of VMware vSphere that provides smart virtual machine placement and storage load-balancing mechanisms based on space capacity. It helps decrease the amount of operational effort (the work a data center administrator performs) associated with the provisioning of virtual machines and monitoring of the storage environment.
 
-![vsphere_storage DRS](/images/vSphere_Storage_DRS_new.png)
+![vsphere_storage DRS](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/vSphere_Storage_DRS_new.png)
 
 ### vSphere Fault Tolerance (FT)
 
@@ -761,7 +761,7 @@ When vSphere Fault Tolerance is enabled on a virtual machine, a secondary copy o
 
 `The difference between FT and HA is that with HA`, when the server fails, the end-user will see the virtual machine fail and reboot, while with FT, the transfer to a different server is seamless and will not be noticeable to the end user. This seamless transfer is similar to vMotion except that with vMotion the transfer is done while both servers are running whereas FT transfers the VM when its host fails.
 
-![vsphere fault tolerance](/images/vSphere_Fault_Tolerance.png)
+![vsphere fault tolerance](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/vSphere_Fault_Tolerance.png)
 
 ### vSphere Replication
 
@@ -771,7 +771,7 @@ An example of how vSphere Replication would be used is in the case of an unfortu
 
 One of the features of vSphere Replication is that it is integrated with vSphere Web Client, which eases administration and monitoring. This means that creating a target site for the replicated VMs is easily done through a wizard.
 
-![vsphere_replication](/images/vSphere_Replication.png)
+![vsphere_replication](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/vSphere_Replication.png)
 
 ### VMware VSAN
 
@@ -781,7 +781,7 @@ VMware designed an extension of vSphere, called VSAN, to virtualize storage in d
 
 VSAN stands for Virtual Storage Area Network. A VSAN is a virtualized SAN (storage area network), created by using virtual routing and switching to network the clustered storage. This is similar to how SAN uses physical networking to make storage available to the physical data center.
 
-![vsan](/images/SAN.png)
+![vsan](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/SAN.png)
 
 ### Hyper converged Infrastructure
 
@@ -791,7 +791,7 @@ VMware VSAN, along with VMware vSphere, creates what is called a `hyper-converge
 
 A converged infrastructure integrates all physical data center components from a single vendor while a hyper-converged infrastructure integrates virtualized data center components from one vendor, in this case, VMware.
 
-![vsphere hyperconverged infrastructure](/images/HighConverged%20HCL.png)
+![vsphere hyperconverged infrastructure](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/HighConverged%20HCL.png)
 
 ### VMware NSX
 
@@ -799,13 +799,13 @@ NSX expands standard network virtualization beyond just virtual switches.
 
 With NSX, you create a software layer of networking on top of the physical network that includes virtual routers, load balancing, virtual private networks (VPNs), firewalls, and more. That software layer of networking can then be divided into many virtual networks. NSX is more centralized than the traditional data center.
 
-![VMware NSX](/images/NSX-graphics.png)
+![VMware NSX](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/NSX-graphics.png)
 
 #### NSX-T
 
 For NSX to function properly in a virtualized environment, you need vCenter Server. This is because, without vCenter Server, NSX will not be able to integrate with vSphere and the hypervisor. To mitigate the use of vCenter Server, VMware now offers a next-generation solution to software-defined networking called NSX-T Data Center. NSX-T Data Center does not require vCenter Server. Since it does not require vCenter Server, administrators can now support the ever-growing number of cloud architectures such as AWS, containers, and Kubernetes
 
-![NSX-T](/images/NSX-T.png)
+![NSX-T](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/NSX-T.png)
 
 To manage NSX-T Data Center, NSX Manager is needed. The NSX Manager is installed as a virtual appliance on any ESXi host in your vSphere environment. NSX Manager provides administrators with a centralized management tool that features a GUI to configure and monitor NSX-T components. NSX-T Data Center supports a management cluster of three NSX Managers to ensure high-availability. A management cluster is recommended for production environments.
 
@@ -820,11 +820,11 @@ With VMware Cloud Foundation, a set of products that make it easy for anyone wit
 VMware Cloud Foundation brings together vSphere, vSAN, NSX, and SDDC Manager.
 
 
-![vmware cloud foundation](/images/Vmware%20cloud%20foundation_01.png)
+![vmware cloud foundation](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/VMware%20Cloud%20Foundation.png)
 
 VMware Cloud Foundation works seamlessly with the virtualized desktops of Horizon, with vRealize’s time-saving automation of manual processes, with using the free and open source OpenStack on top of VMware infrastructure through VMware Integrated OpenStack, and with the virtual containers of vSphere Integrated Containers.
 
-![vsphere_cloudfoundation_01](/images/Vmware%20cloud%20foundation_01.png)
+![vsphere_cloudfoundation_01](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/Vmware%20cloud%20foundation_01.png)
 
 VMware Cloud Foundation can be used to virtualize on-premises or to migrate off-premise
 
@@ -842,7 +842,7 @@ VMware vCloud Automation Center is not limited to working only with VMware produ
 
 VMware has a solution called VMware Cloud™ that can be utilized to manage applications (including containerized apps) across any cloud - be it public, private, or hybrid. VMware Cloud is an application platform designed to give administrators the flexibility to deploy and manage applications wherever they’re needed - in the cloud or in a container in Kubernetes. VMware Cloud works with both enterprise-sized cloud providers such as AWS, Azure, and Google, and on many other smaller-scale cloud providers.
 
-![vmware cloud](/images/The_Cloud.jpg)
+![vmware cloud](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/The_Cloud.jpg)
 
 VMware has integrated cloud and virtualization technology tools into a simplified infrastructure called VMware Cloud™. VMware Cloud enables organizations to modernize their applications to be compatible with various cloud platforms and merge these applications to the cloud.
 
@@ -861,7 +861,7 @@ The following breaks down each version and what role each plays in cloud native 
 
 `Tanzu Advanced`: Manages Kubernetes across multiple cloud environments and focuses on developer needs by providing tools for fast and secure container production, as well as advanced tools that provide information on container performance.
 
-![vmware tanzu](/Images/vmware%20Tanzu.png)
+![vmware tanzu](https://github.com/Charan-happy/Learn_VMware/blob/main/Images/vmware%20Tanzu.png)
 
 `How Tanzu works`, Tanzu runs on a Kubernetes grid and manages several K8s clusters. This creates a Tanzu Kubernetes Grid (TKG). To manage the clusters, organizations have VMware Tanzu Mission Control. The purpose of Tanzu Mission Control is to operate and secure K8s and modern apps in the cloud. It provides a single point from which to:
 
