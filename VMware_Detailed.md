@@ -37,6 +37,11 @@
 # Introdution to Vmware Vsphere
 
     1. Physical Datacenter
+
+![physical Datacenter](https://github.com/Charan-happy/Learn_VMware/assets/89054489/8800307d-9fd6-44a6-9957-2f28353a82b7)
+
+![virtualization](https://github.com/Charan-happy/Learn_VMware/assets/89054489/c0ab4d46-7d1a-43ce-901d-c1b0c5de7145)
+
     2. Vmware ESXI 6.7
 
 # Centralized Administration
