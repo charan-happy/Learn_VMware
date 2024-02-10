@@ -827,3 +827,37 @@ VMware tools :
            -  FT created and maintained identical to and continuously available running VM is replaced by its shadow copy, in the event of fail over situation.
            
 
+iSCSI in VMware
+
+iSCSI (Internet Small Computer System Interface) is a storage networking standard that allows data to be transferred over an IP network. In the context of VMware, iSCSI is used to connect virtual machines (VMs) to storage devices that are located on a separate physical server. This allows VMs to access storage resources without being directly connected to them, which provides greater flexibility and scalability.
+
+iSCSI works by encapsulating SCSI commands within TCP/IP packets and sending them over an IP network. This allows iSCSI to be used over any type of IP network, including Ethernet, Fibre Channel over Ethernet (FCoE), and InfiniBand.
+
+To use iSCSI in VMware, you will need to install the vSphere iSCSI Software Initiator on each ESXi host that you want to connect to iSCSI storage. You will also need to configure the iSCSI storage device to allow connections from the ESXi hosts.
+
+Once you have configured iSCSI, you can create VMFS datastores on the iSCSI storage devices. VMFS datastores are used to store virtual machine files. You can then create and deploy VMs on the VMFS datastores.
+
+iSCSI is a reliable and efficient way to connect VMs to storage devices. It is a cost-effective solution for organizations that need to provide storage for a large number of VMs.
+
+Memory Virtualization
+
+Memory virtualization is a technique that allows multiple virtual machines (VMs) to run on a single physical machine. Each VM has its own virtual memory address space, which is isolated from the memory address spaces of other VMs. This isolation is achieved through the use of hardware-assisted virtualization (HAV) or software-based virtualization (SBV).
+
+HAV uses special hardware features to create and manage virtual memory address spaces. These features include:
+
+Page tables: Page tables are data structures that map virtual memory addresses to physical memory addresses. HAV uses special hardware to manage page tables, which allows for fast and efficient address translation.
+Segmentation: Segmentation is a technique that divides memory into segments. Each segment has its own access rights, which can be used to protect memory from unauthorized access. HAV uses special hardware to manage segmentation, which allows for fine-grained control over memory access.
+SBV uses software to create and manage virtual memory address spaces. SBV does not require any special hardware, but it can be less efficient than HAV.
+
+Benefits of Memory Virtualization
+
+Memory virtualization offers a number of benefits, including:
+
+Isolation: Memory virtualization isolates the memory of each VM from the memory of other VMs. This isolation helps to protect VMs from security breaches and software crashes.
+Portability: Memory virtualization allows VMs to be easily moved from one physical machine to another. This portability makes it easier to manage and deploy VMs.
+Scalability: Memory virtualization allows multiple VMs to run on a single physical machine. This scalability can help to reduce hardware costs.
+Conclusion
+
+Memory virtualization is a powerful technology that can be used to improve the security, portability, and scalability of virtual machines.
+
+ "Contiguous addressable memory space" is a fundamental concept in virtualization that ensures memory isolation, efficient memory management, and optimized performance for virtual machines. It provides a dedicated and continuous memory space for each VM, allowing them to operate securely and efficiently within the host machine's memory resources.
