@@ -221,14 +221,148 @@
                       
     1. Custom Specification file
 
-            
+            Demo
+
 # Resource Management and monitoring
 
     1. Managing resource and basic monitoring
+   
+        Resource Pools
+
+        - Required for controlling and coordinating compute (CPU & Memory resource)
+        - Enables admins to divide and allocate resources to VMs and other resource pools
+        - Consolidating and managing resources from different hosts in DRS
+        - organized in hierarchical pattern
+        - Also serve as a means to delegate privileges to other users and groups.
+       
+       Resource Management Parameters:
+
+            Shares - Guranteed proportion of compute resources
+
+            Reservation - Bare min resources needed
+
+            Limit - Max resources allocated to the pool
+
+            Expandable reservation - Pool specific attribute
+
+        Monitoring Resources
+
+            Monitor OS resources with appropriate tools
+
+            Tools available in VMs guest OS (windows): Perfmon, IOmeter, Task Manager
+
+            Monitoring tools available within vSphere ESXI and vCenter Server : vSphere logs, vCenter performance Charts
+            
+            vRealize Operations Manager (vrops) : 
+                - Used for virtual Infrastrucuture (vSphere) monitoring.
+                - Gathers performance data from each object at every level.
+                - Stores data for analysis :
+                      - Supply near real-time info about issues or potential issues
+                      - offers analysis at a deeper level than vCenter server provides.
+        
+        Alarm
+
+            - A notification sent as reaction to selected circumstance that occur with an object in vSphere ecosystem
+            - predefined alarms exist and can be configured to our needs.
+           
+           Types of alarms :
+                - Condition based alarm monitor for specific condition or state
+                - Event based alarm monitor for specific events occuring on this object.
+               
+        - An alarm requires a trigger
+  
+        Types of Triggers:
+
+        1. Condition based  - alarm triggered when a predefined condition is satisfied
+                EX: A VM's current snapshot size is above 2 GB. A host using 90% of its total memory
+        2. Event based alarm triggered when an event occurs:
+
+                    EX: Host's hardware health has changed, A license has expired in the data center
+
+        memory Over commitment
+
+            - Allows host to configure more memory for VMs than it physically has.
+            - VMs do not always use their full allocated memory
+            - Memory overhead is stored in a swap file (.vswp)
+            - Hypervisor/VMM manages allocation and reallocation of compute to VMs based on demand
+          
+          EX: Host machine memory is 4 GB and memory allocation to VMs created is 8 GB.
+
+        Memory Reclaiming Techniques
+
+            1. Economize use of physical memory pages :
+                - Transparent page sharing facilitates pages having identical contents to be stored only once.
+               
+            2. Deallocate memory from one VM for another
+                    Ballooning mechanism, is invoked when memory is scarce, forces VMs to use their own paging areas.
+            
+            3. Memory Compression
+                - When memory contention is high, this method attempts to reclaim some memory performance.
+                
+            4. Host level SSD Swapping
+                - Utilizes solid state drive (SSD) on the host for a host cache swap file which might increase performance.
+                
+            5. Page VM memory out to Disk
+                    - usage of VMKernel swap space begins as the last resort. performance drops down.
+        
+        Hyperthreading
+
+            - Hyper  threading enables a core to execute two threads (logical CPUs) or sets of instructions, at the same time.
+            - To enable Hyperthreading :
+                    - verify that the system supports hyperthreading
+                    - Enable hyperthreading in the system BIOS
+                    - Ensure that hyperthreading for the ESXI host is turned on.
+
 
 # Host Scalability
 
     1. vSphere cluster and Disaster Recovery
 
+        Cluster
+            - Creating cluster means grouping ESXI host's inside vSphere to share resources
+            - When hosts are added to cluster, resource pool of each host will merge within cluster resource pools
+            - Features supported on cluster :
+                    - vSphere High Availability (HA)
+                    - vSphere Distributed Resource Scheduler (DRs)
+                    - virtual Storage Area Network (vSAN)
+                    - Fault Tolerance (FT)
 
+        vSphere High Availability
+
+            - VMware has simple inexpensive and higher level of availability solution for important work loads running on VMs with benefits:
+                - Hardware non specific
+                - Minimizes planned downtime for usual maintainance activities
+                - Auto recovery if failure occurs
+
+            If HA is configured on cluster,
+            - one host will be elected as "Master" automatically. master interacts with vcenter server and monitors the state of all slave hosts and their VMs.
+            - in case of failure, VMs on failed host are migrated (vMotion) and restarted on another host. Hence, HA does not assure Zero downtime.
+            - Heart beat messages are exchanged via network and datastore.
+        
+        Distributed Resource Scheduling
+
+            cluster is well balanced when resources on the every host is evenly utilized
+
+            DRS :
+                - Uses cluster-level balance metrics(standard deviation of resource utilization data from hosts in the cluster) to implement load-balancing decisions.
+                - Executes its algorithm once every 5 minutes (by default) to study imbalance in the cluster.
+                - Leverage vMotion to migrate running VMs from one ESXI host to another.
+            
+            Goals of DRS :
+            - scale and manage compute resources.
+            - Optimal workload balance for better performance
+            - Minimizes administration effort
+          
+          Automation levels to configure DRS :
+                - Fully automated - DRS applies initial placements and load balancing recommendations automatically.
+                - partially automated - DRS applies recommendations only for initial placements
+                - manual - DRS suggests both initial placements and load balancing recommendations. Implementation is manual.
+        
+        vSphere Fault Tolerance
+
+            - vSphere fault Tolerance provides continuous availability (zero downtime) for VMs.
+            - This is achieved by creating a live shadow copy (secondary) of the running VM (primary) and then placing that in virtual lockstep.
+           -  Vmware vLockstep technology capture inputs and events that occur on the running VM (captures changes in the compute) and forwards the same to the live shadow copy which is running on another host.
+           -  FT created and maintained identical to and continuously available running VM is replaced by its shadow copy, in the event of fail over situation.
+           
 
