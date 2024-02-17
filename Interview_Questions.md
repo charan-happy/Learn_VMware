@@ -17,7 +17,7 @@ Bare-metal (is virtualization software i-e VMvisor, Hyper-V which is installed d
 <details><summary>8. what is Host and Guest machine <br></summary></details> 
 <details><summary> 9. What is vmware workstation<br></summary></details>
 <details><summary>10. what is virtual machine <br></summary></details>
-<details><summary>11. what are the virtual machine files <br><summary></details>
+<details><summary>11. what are the virtual machine files <br></summary></details>
 <details><summary>12. what is vmkernel <br></summary></details>
 <details><summary>13. what is cluster <br></summary></details>
 <details><summary> 14. what is vlan<br></summary></details>
@@ -85,7 +85,7 @@ Bare-metal (is virtualization software i-e VMvisor, Hyper-V which is installed d
 <details><summary>76. which databases are supported with vcenter server appliance 6.7<br></summary></details>
 <details><summary>77. Types of Deployment Supported in vcenter server   <br></summary></details>
 <details><summary>78. what are CPU, Memory, and storage requirements for vcenter server applinance 6.7   <br></summary></details>
-<details><summary>79. which services are in vcenter server appliance with platform service controller<br><summary></details>
+<details><summary>79. which services are in vcenter server appliance with platform service controller<br></summary></details>
 <details><summary>80. what is vcenter server enhanced linked mode  <br></summary></details>
 <details><summary>81. what is the latest version of VMFS   <br></summary></details>
 <details><summary>82. differnce between VMFS 5& VMFS 6   <br></summary></details>
