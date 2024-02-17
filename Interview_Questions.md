@@ -6,16 +6,16 @@ Network Virtualization: Provides complete reproduction of physical network into 
 Storage Virtualization: Provides an abstraction layer for physical storage resources to manage and optimize virtual deployment.<br>
 Application Virtualization: increased mobility of applications and allows migration of VMs from a host to another with minimal downtime.<br>
 Desktop Virtualization: virtualize desktop to reduce cost and increase service</details>
-<details><summary> 3. What is hypervisor <br></summary>A hypervisor is a virtualization layer that enables multiple operating systems to share a single hardware host. Each operating system or VM is allocated physical resources such as memory, CPU, storage, etc., by the host </details>
+<details><summary> 3. What is a hypervisor <br></summary>A hypervisor is a virtualization layer that enables multiple operating systems to share a single hardware host. Each operating system or VM is allocated physical resources such as memory, CPU, storage, etc., by the host </details>
 <details><summary> 4. Types of hypervisor<br></summary>There are two types of hypervisors.
 
 Hosted hypervisor (works as application i-e VMware Workstation)<br>
 Bare-metal (is virtualization software i-e VMvisor, Hyper-V which is installed directly onto the hardware and controls all physical resources).</details>
-<details><summary> 5. what is HCL<br></summary></details>
-<details><summary> 6. what is ESXI<br></summary></details>
-<details><summary> 7. Differnce between ESX and ESXi<br></summary></details>
+<details><summary> 5. what is HCL<br></summary> HCL Stands for Hardware Compatibility List. It is a single Point of reference to ensure any hardware that we are planning to use with VMware products has been tested and certified to work fine. </details>
+<details><summary> 6. what is ESXI<br></summary>It is a Baremetal/type-1 Hypervisor developed by VMware. It is designed to run VMs directly on the physical hardware . It provides robust and efficient platform for virtualization, offering features such as HA,scalability and resource management. </details>
+<details><summary> 7. Difference between ESX and ESXi<br></summary> Overall the functionality of both ESX and ESXI are same. But, the difference is in the architecture and operations Management. ESXI uses Direct Console User Interface (DCUI) instead of service control to manage ESXI host, Due to low code base ESXI installation is quicker than ESX and ESXI consumes less disk space when compared to ESX. </details>
 <details><summary>8. what is Host and Guest machine <br></summary></details> 
-<details><summary> 9. What is vmware workstation<br></summary></details>
+<details><summary> 9. What is VMware workstation<br></summary></details>
 <details><summary>10. what is virtual machine <br></summary></details>
 <details><summary>11. what are the virtual machine files <br></summary></details>
 <details><summary>12. what is vmkernel <br></summary></details>
