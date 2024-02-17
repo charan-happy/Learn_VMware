@@ -1,27 +1,27 @@
-<details><summary>1. What is virtualization ? <br></summary>The process of creating virtual versions of physical components, i.e., Servers, Storage Devices, Network Devices on a physical host, is called virtualization. Virtualization lets you run multiple virtual machines on a single physical machine which is called ESXi host.</details>
+<details><summary>1. What is virtualization? <br></summary>The process of creating virtual versions of physical components, i.e., Servers, Storage Devices, and Network Devices on a physical host, is called virtualization. Virtualization lets you run multiple virtual machines on a single physical machine which is called ESXi host.</details>
 <details><summary> 2. Types of virtualization<br></summary>There are 5 basic types of virtualization.
 
 Server virtualization: consolidates the physical server, and multiple OS can be run on a single server.<br>
 Network Virtualization: Provides complete reproduction of physical network into a software-defined network.<br>
 Storage Virtualization: Provides an abstraction layer for physical storage resources to manage and optimize virtual deployment.<br>
-Application Virtualization: increased mobility of applications and allows migration of VMs from a host to another with minimal downtime.<br>
+Application Virtualization: increased mobility of applications and allows migration of VMs from one host to another with minimal downtime.<br>
 Desktop Virtualization: virtualize desktop to reduce cost and increase service</details>
 <details><summary> 3. What is a hypervisor <br></summary>A hypervisor is a virtualization layer that enables multiple operating systems to share a single hardware host. Each operating system or VM is allocated physical resources such as memory, CPU, storage, etc., by the host </details>
 <details><summary> 4. Types of hypervisor<br></summary>There are two types of hypervisors.
 
 Hosted hypervisor (works as application i-e VMware Workstation)<br>
-Bare-metal (is virtualization software i-e VMvisor, Hyper-V which is installed directly onto the hardware and controls all physical resources).</details>
+Bare-metal (virtualization software i-e VMvisor, Hyper-V which is installed directly onto the hardware and controls all physical resources).</details>
 <details><summary> 5. what is HCL<br></summary> HCL Stands for Hardware Compatibility List. It is a single Point of reference to ensure any hardware that we are planning to use with VMware products has been tested and certified to work fine. </details>
-<details><summary> 6. what is ESXI<br></summary>It is a Baremetal/type-1 Hypervisor developed by VMware. It is designed to run VMs directly on the physical hardware . It provides robust and efficient platform for virtualization, offering features such as HA,scalability and resource management. </details>
-<details><summary> 7. Difference between ESX and ESXi<br></summary> Overall the functionality of both ESX and ESXI are same. But, the difference is in the architecture and operations Management. ESXI uses Direct Console User Interface (DCUI) instead of service control to manage ESXI host, Due to low code base ESXI installation is quicker than ESX and ESXI consumes less disk space when compared to ESX. </details>
-<details><summary>8. what is Host and Guest machine <br></summary></details> 
-<details><summary> 9. What is VMware workstation<br></summary></details>
-<details><summary>10. what is virtual machine <br></summary></details>
-<details><summary>11. what are the virtual machine files <br></summary></details>
-<details><summary>12. what is vmkernel <br></summary></details>
-<details><summary>13. what is cluster <br></summary></details>
-<details><summary> 14. what is vlan<br></summary></details>
-<details><summary> 15. what is vcenter server<br></summary></details>
+<details><summary> 6. what is ESXI<br></summary>It is a Baremetal/type-1 Hypervisor developed by VMware. It is designed to run VMs directly on the physical hardware. It provides a robust and efficient platform for virtualization, offering features such as HA, scalability, and resource management. </details>
+<details><summary> 7. Difference between ESX and ESXi<br></summary> Overall the functionality of both ESX and ESXi are the same. But, the difference is in the architecture and operations Management. ESXI uses Direct Console User Interface (DCUI) instead of service control to manage the ESXI host, Due to low code base ESXI installation is quicker than ESX and ESXI consumes less disk space when compared to ESX. </details>
+<details><summary>8. What is Host and Guest machine <br></summary**>Host:** It is a physical Machine/server on which VMware software was installed. It provides necessary hardware resources such as CPU, Memory, Storage, and Network for the VM to run. It also provides the underlying operating system and hardware drivers required for the guest operating system to operate.** Guest:** It is a VM that runs isolately on top of the Host machine. These can be created using various Operating systems including Linux, windows providing flexibility in running different software and applications.</details> 
+<details><summary> 9. What is VMware workstation<br></summary>- it is a hosted Hypervisor that runs on different operating systems like Linux and Windows. It allows users to create and run VMs on their computers. It is mainly used by developers, Testers, and It professionals who need to run multiple VMs on a single computer.</details>
+<details><summary>10. what is virtual machine <br></summary>It is a software-based emulation of a physical machine. It provides a way to run multiple Os in a VM. VMs are often used for development and testing purpose. Advantages of Using VMs includes scalability, portability, resource efficiency, isolation</details>
+<details><summary>11. what are the virtual machine files <br></summary> A physical representation of a physical computers hardware and software configuration . It encapsulates all the necessary components such as Operating system, application, data in a single file. .vmx file, .vmdk,.nvRAM file, .vmxf and .vmsd files</details>
+<details><summary>12. what is vmkernel <br></summary>VMkernel is a operating system created by VMware. It acts as a virtual interface between a Vm and host to communicate each other. It's functions include process creation, process controls, process threads, signals, filesystems etc. </details>
+<details><summary>13. what is cluster <br></summary>it is a group of ESXI hosts that are combined managed together as a single entitiy. It provides several benefits include resource pooling, high availability, loadbalancing, fault tolerance</details>
+<details><summary> 14. what is vlan<br></summary> A logical network segmentation within a physical network. vLANS enable the creation of multiple isolated within a single physical networking infrastructure. This allows for better network organization, security and traffic management. It is done at layer 2 of the network protocol suite. </details>
+<details><summary> 15. what is vcenter server<br></summary> vcenter server is an application that enables you to manage vsphere infrastructure from a centralized location. It has features like Centralized management, High Availability, scalability, security, Extensibility</details>
 <details><summary> 16. what is platform service controller<br></summary></details>
 <details><summary>17. what are the services in platform service controllers <br></summary></details>
 <details><summary>18. Types of deployment supported in vcenter<br></summary></details>
