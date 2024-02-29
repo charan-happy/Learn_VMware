@@ -614,3 +614,462 @@ To access multiple vCenter Servers within a PSC, requires Global Permission to a
 #40. An administrator created 10 ESXi 6.x hosts via Auto Deploy for a new Test/Dev cluster, and all hosts are configured to obtain their IP address via DHCP. Which DCUI option should the administrator use to renew the DHCP lease for the hosts?
 
 The “Reset Management Network” of the Direct Console User Interface (DCUI) option is used to renew the DHCP lease for the hosts.
+
+
+1. Your VM is facing slow performance, How would you start your troubleshooting and which tool you will use for same ?
+      
+         To troubleshoot slow VM performance, I would start by checking performance metrics using tools such as vRealize Operations Manager or esxtop. I would examine CPU, memory, and disk utilization, as well as network statistics to identify any bottlenecks. Additionally, I would review the VM's log files to identify any specific issues or error messages that could be affecting performance.
+
+
+2. what counters can be viewed to identify CPU contention ?
+
+       To identify CPU contention, I would look at performance counters such as %RDY (CPU Ready Time) and %CSTP (Co-Stop). These metrics, obtained from esxtop or vCenter, provide insights into how much time a VM is waiting for CPU cycles and if there are any co-scheduling issues.
+
+3. you see ESXI host is not responding state, what will be your next steps ?
+
+            If an ESXi host is not responding, I would initially try to access the host via the console. If that fails, I might perform a hardware check to ensure the physical server is operational. If necessary, I would consider restarting the management agents using the DCUI (Direct Console User Interface) or by connecting through SSH
+
+4. while putting ESXI in  MM it gets stuck in between, How you will troubleshoot this ?
+
+          If an ESXi host gets stuck during maintenance mode, I would first check for any active tasks or VMs causing the delay. If needed, I might manually migrate or power off VMs causing issues. Checking the host's logs and using esxcli commands to force maintenance mode are additional steps I might take.
+
+5. How will troubleshoot storage issue from VMware side ?
+     
+         For storage issues, I would check storage-related performance metrics using tools like vRealize Operations Manager. Additionally, I would inspect VMkernel logs for any storage-related errors and verify the connectivity and configuration of datastores. Utilizing esxcli commands for storage-related diagnostics is also a part of the troubleshooting process.
+
+6. your ESXI host is crashed or PSOD what will be your next steps ?
+  
+           In the event of an ESXi host crash or PSOD (Purple Screen of Death), I would first document any error messages on the screen. After identifying the potential cause from the logs, I might attempt to restart the host. If the issue persists, I would consider checking hardware compatibility, firmware, and drivers.
+
+
+7. You ESXI host is crashed or PSOD and you will see 1 VM is not getting restarted onto another host so what will be your next step to make VM available ?
+
+          If a VM doesn't restart on another host after an ESXi crash, I would manually attempt to vMotion the VM to a healthy host using vCenter. If that doesn't work, I would inspect the VM's settings, ensuring compatibility with the target host, and troubleshoot any networking or storage issues hindering the VM's availability.
+
+8. How you will solve recurring slow performance issues on VM ?
+
+         To address recurring slow performance on a VM, I would perform a thorough analysis of performance metrics over time. This might involve identifying patterns, checking for resource contention, and optimizing resource allocations. Adjustments to CPU and memory reservations, as well as reviewing the VM's workload, could be part of the solution.
+
+9. What is command to restart management services in ESXI host ?
+
+       To restart management services on an ESXi host, you can use the services.sh restart command via SSH or directly through the console. This command restarts all management services, including the vpxa agent
+
+10. During VM migration, vMotion stuck in between , How you will troubleshot this ?
+  
+  If vMotion gets stuck during VM migration, I would check for network connectivity issues between the source and destination hosts. Examining the vMotion network for any packet loss or latency is crucial. Additionally, reviewing vMotion logs and checking for compatibility issues between hosts are common troubleshooting steps.
+
+11. what are the pre and post checks  you will perform before and after vsphere upgrade ?
+
+         Pre-Upgrade Checks:
+Verify compatibility of existing hardware with the new vSphere version.
+Check and update VMware Compatibility Guide for compatibility of third-party software.
+Ensure all critical backups are completed, including VMs, configurations, and databases.
+Review release notes for known issues and compatibility concerns.
+Check available resources (CPU, memory, storage) on hosts and vCenter server.
+Post-Upgrade Checks:
+Verify successful completion of the upgrade process on all components.
+Validate that all VMs and applications are functioning correctly.
+Monitor resource utilization and performance.
+Update VMware Tools and hardware versions for VMs.
+Conduct post-upgrade testing for critical workloads.
+
+
+12. what is the procedure to upgrade ESXI hosts ?
+
+    Preparation:
+Ensure compatibility with existing hardware.
+Backup ESXi configuration using vCenter or PowerCLI.
+Verify network connectivity and host health.
+Upgrade Steps:
+Place the host in maintenance mode.
+Use vSphere Update Manager (VUM) or CLI to initiate the upgrade.
+Monitor the upgrade process for any errors or warnings.
+Confirm successful completion and exit maintenance mode.
+
+13. what is the procedure to upgrade vcenter server ?
+
+       Preparation:
+Backup vCenter Server and its associated databases.
+Verify compatibility with existing ESXi hosts and VMs.
+Check for required permissions and system requirements.
+Upgrade Steps:
+Launch the vCenter Server installer.
+Choose the upgrade option and follow the on-screen instructions.
+Monitor the upgrade process for any issues.
+Verify vCenter functionality post-upgrade.
+
+14. after esxi upgrade, how will you revert to previous version of ESXI host ?
+
+             Preparation:
+Ensure backups of critical VMs and configurations are available.
+Identify the reasons for the revert.
+Revert Steps:
+Restore the previous ESXi version using the backup.
+Reconfigure any settings that were changed during the upgrade.
+Validate the functionality and performance.
+
+15. How to migrate from standard switch to distributed switch ?
+
+       Preparation:
+Ensure vCenter Server is available.
+Verify the compatibility of hosts and VMs with distributed switches.
+Create a distributed switch with the required settings.
+Migration Steps:
+Select the host and go to the Networking pane.
+Right-click on the standard switch, choose "Migrate Virtual Machine Networking," and follow the wizard.
+Verify VM connectivity and settings on the distributed switch.
+
+16. your backup team is pointing out that VM backup is failing continuously how you will troubleshoot this ?
+
+        Steps:
+Review backup job logs for error messages.
+Verify connectivity between backup server and ESXi hosts.
+Check VM snapshots and remove any lingering snapshots.
+Ensure VMware Tools are up-to-date on VMs.
+Confirm that there is sufficient space on the backup repository.
+
+
+17. You are unable to access ESXI host using hostclient but Esxi host is accessible from vcenter server what could be the reason  reason for it ?
+
+Possible Reasons:
+Firewall settings blocking access.
+Network connectivity issues.
+Browser-related problems.
+Steps:
+Check firewall settings on the ESXi host.
+Verify network connectivity.
+Try accessing from a different browser or device.
+
+
+18. what will happen if .nvram file is deleted form vm ?
+
+        Impact:
+Loss of BIOS configuration for the VM.
+Resolution:
+Recreate the .nvram file by restarting the VM.
+
+19. your network team wants to analyze the traffic of specific vm, which feature or functionality will help you to achieve this ?
+
+            Feature/Functionality:
+Use the "NetFlow" feature on a distributed switch to capture and analyze network traffic for a specific VM.
+
+20. what is the reason VM is appeared as orphaned VM ?
+
+       Possible Reasons:
+VM registration issues.
+Datastore connectivity problems.
+Steps:
+Verify datastore accessibility.
+Re-register the VM in vCenter if necessary.
+
+21. what is the reason you are unable to expand datastore ?
+
+     Possible Reasons:
+Insufficient space on the underlying storage device.
+Maximum datastore size reached.
+Storage device connectivity issues.
+Steps:
+Verify available space on the storage device.
+Check for any storage device-related errors.
+Ensure that the datastore is not at its maximum size limit.
+
+22. what is the reason for snapshot failure ?
+
+            Possible Reasons:
+Lack of free space on the datastore.
+Issues with the snapshot file.
+VM disk consolidation needed.
+Steps:
+Check datastore for available space.
+Examine snapshot files and VM disk consolidation status.
+Resolve any underlying storage issues.
+
+23. what is EVC mode and how it get applied onto cluster ?
+   EVC (Enhanced vMotion Compatibility):
+EVC enables VMs to be vMotioned across different generations of CPUs in a cluster.
+Application:
+Apply EVC mode through vCenter by selecting a specific EVC mode that matches the CPU features of all hosts in the cluster.
+
+24. what is ESXI memory management techniques ?
+  
+          Techniques:
+Transparent Page Sharing (TPS): Identifies and shares identical memory pages.
+Memory Compression: Compresses memory contents to reclaim space.
+Ballooning: Adjusts VM memory allocation by reclaiming unused memory.
+Memory Swapping: Moves least-used memory pages to disk when memory is overcommitted.
+
+
+25. will VMs communicate to each other if only ESXI management network is down ?
+
+   Scenario:
+VMs can communicate with each other on the same host, even if the ESXi management network is down.
+VMs on different hosts might face communication issues if the hosts cannot communicate.
+
+26. How to recreate VMX file in case of it gets deleted or lost ?
+
+     Steps:
+Locate a backup of the VMX file if available.
+Create a new VM and attach existing virtual disks, configuring settings manually.
+Extract relevant information from the backup or other sources to set up the new VM correctly.
+
+27. What is the reason disk increase option is grayed on vm ?
+
+      Possible Reasons:
+VM is powered on.
+Snapshot exists.
+Insufficient space on the datastore.
+Steps:
+Power off the VM if needed.
+Check for and remove any snapshots.
+Ensure sufficient space on the datastore.
+
+28. how is elction process works in vsphere HA and on what basis master host is selected ?
+
+      Election Process:
+Hosts exchange heartbeat signals.
+If a host does not receive heartbeats, it declares other hosts as failed.
+Host with the highest priority is elected as the master.
+Basis for Master Host Selection:
+Host with the highest priority and connectivity is selected as the master.
+
+29. you perform vmotion of a vm but eventually it got out of network on the destination host ? what can be reason ?
+
+     Possible Reasons:
+VLAN mismatch on the destination host.
+Network configuration issues on the destination host.
+Steps:
+Verify network configurations on the source and destination hosts.
+Check for VLAN mismatches.
+
+30. which files are created when you create new vm on the datastore ?
+
+Files:
+VMX file: Virtual machine configuration file.
+VMDK file: Virtual machine disk file.
+NVRAM file: VM's BIOS settings.
+Log files: Capture VM-related events.
+Snapshot files (if initial snapshots are taken).
+
+31. what is vmkernel port & what is its purpose ?
+
+       Definition:
+VMkernel port is a port on the ESXi host that is used for communication between the host and the virtual machines, as well as for management traffic.
+Purpose:
+Handles important traffic types such as vMotion, iSCSI, NFS, and Fault Tolerance.
+Manages connectivity between ESXi hosts and vCenter Server.
+Facilitates ESXi host management tasks.
+
+32. what is VM port group and what is its purpose ?
+  Definition:
+A VM port group is a logical switch that defines how VMs communicate on a vSphere distributed switch or standard switch.
+Purpose:
+Provides network connectivity to VMs.
+Enables traffic segregation using VLANs.
+Defines network policies for VMs.
+
+
+33. what happen when 2 vms have same Ip address assigned ?
+
+   Impact:
+Network conflicts, communication issues, and potential disruption of services.
+Resolution:
+Assign unique IP addresses to each VM.
+Ensure proper IP address management to avoid conflicts.
+
+
+34. explain 2 vms network connectivity who are on different vlans but on same esxi host ?
+
+    Scenario:
+VMs on the same ESXi host can communicate even if they are on different VLANs, as long as the host's physical network supports inter-VLAN routing.
+ESXi host acts as a router between VLANs for VMs on the same host.
+
+35. what happens to running vmotion when esxi management services are restarted ?
+
+   Impact:
+Ongoing vMotion processes are interrupted.
+VMs might experience a brief pause during the service restart.
+Mitigation:
+Schedule management service restarts during maintenance windows to minimize impact.
+
+36. how do you monitor esxi resources such as cpu & memory ?
+
+Tools:
+vSphere Client or vCenter Server.
+ESXTOP command-line tool.
+Performance charts in the vSphere Web Client.
+Metrics:
+CPU usage, ready time, and contention.
+Memory usage, swap, and ballooning.
+Actions:
+Set up alarms for resource thresholds.
+Regularly review performance charts for trends.
+
+37. what are management agents on esxi hosts and how do you restart management agents ?
+
+Management Agents:
+Agents responsible for communicating with vCenter Server.
+Include hostd (host daemon) and vpxa (vCenter agent).
+Restart Procedure:
+Connect to the ESXi host via SSH.
+Run the command: /etc/init.d/hostd restart && /etc/init.d/vpxa restart.
+
+38. what are different ways to upgrade esxi hosts ?
+
+Methods:
+vSphere Update Manager (VUM).
+Interactive upgrade using ESXi installer.
+Auto Deploy for stateless installations.
+Considerations:
+Ensure compatibility with hardware and other components.
+Back up ESXi configuration before upgrading.
+
+39. what are different ways to upgrade vcenter server appliance ?
+
+ Methods:
+Online upgrade using VAMI (vCenter Appliance Management Interface).
+Offline upgrade using ISO or OVA image.
+Command-line interface (CLI) upgrades.
+Considerations:
+Check compatibility with other VMware components.
+Ensure proper backups before upgrading.
+
+40. How do you troubleshoot vmdisk latency issues ?
+
+ Steps:
+Monitor storage performance metrics using vCenter.
+Check for storage device issues.
+Investigate network latency if using network-based storage.
+Review ESXi logs for storage-related errors.
+Consider adjusting storage multipathing settings if applicable
+
+41. which logs you will pull in case of PSOD ?
+
+   Logs:
+/var/log/vmkernel.log typically contains information about the PSOD.
+Review the core dump stored in the /var/core/ directory.
+Analysis:
+Examine the logs for error messages or specific events leading up to the PSOD.
+Use tools like vm-support or analyze core dumps for deeper investigation.
+
+
+42. after upgrade of esxi host, you observe that previous version of esxi host is booting ?
+
+          Possible Reasons:
+Bootloader configuration issues.
+Incorrect installation or upgrade process.
+Resolution:
+Reinstall or reapply the upgrade.
+Verify that the correct bootloader and bootbank versions are in use.
+
+43. what will happen to Ft in vm in case of esxi host goes down in cluster ?
+
+Scenario:
+FT provides continuous availability by running a secondary VM on another host.
+If the primary host goes down, the secondary VM takes over.
+Impact:
+Minimal downtime, as the secondary VM is promoted to the primary role.
+
+44. can you map a single physical nic to multiple virtual switches ?
+ 
+     Scenario:
+Not supported natively.
+Physical NICs are typically associated with a single vSwitch.
+Alternative:
+Use VLANs on the vSwitch to segregate traffic without requiring multiple physical NICs.
+
+45. what is swap file in vm and what is the use of it ?
+       Definition:
+A swap file (.vswp) is created in the VM's directory on the datastore.
+Use:
+Acts as a temporary storage for VM memory content when memory contention occurs.
+Helps prevent performance degradation due to memory overcommitment
+
+46 what are different partitions in esxi host ?
+
+Partitions:
+/boot: Boot files.
+/store: Core dump and system logs.
+/vmfs: VMFS datastore.
+/scratch: Temporary files and logs.
+/altbootbank: Alternative boot files.
+
+47. what are differnet partitions in esxi host ?
+   Partitions:
+esx and vmlinux: ESXi kernel.
+vsantraces: VSAN traces.
+locker: Host configuration files.
+coredump: Core dump files.
+
+48. how can you clone vm on esxi host without vcenter server ?
+  Steps:
+Use the vicfg-cfgbackup command to backup the VM's configuration.
+Copy the VM files to the new location.
+Modify the configuration files as needed.
+Use vicfg-cfgbackup to restore the VM's configuration.
+
+
+49. after moving esxi host form one cluster to another another, you found that vmotion is not working what would you do now ?
+      Possible Reasons:
+Incompatible hardware or network configurations.
+Licensing issues.
+Steps:
+Verify network configurations and compatibility.
+Ensure licensing is consistent across clusters.
+Restart the management agents on the affected hosts.
+
+50 if customer is using External PSC, how you will convert External PSC to embedded PSC ?
+
+Procedure:
+Deploy a new vCenter Server Appliance with an embedded PSC.
+During the deployment, choose the option to join an existing SSO domain.
+Migrate services and data from the external PSC to the embedded PSC.
+Decommission the external PSC after successful migration.
+
+
+51. Difference between ISO OVA OVF ?
+
+ISO (Disk Image File):
+
+Format:
+ISO stands for International Organization for Standardization.
+It is a disk image file format that contains the contents of an optical disk, such as a CD or DVD.
+Usage in VMware:
+In VMware, ISO files are often used to store the installation media for operating systems or software.
+During VM creation or maintenance, an ISO can be mounted to a virtual CD/DVD drive to install or update software.
+OVA (Open Virtualization Appliance):
+
+Format:
+OVA is a single-file distribution of the OVF format.
+It is a package that contains all the files necessary for deploying a virtual appliance, including the OVF file, VMDK files, and other resources.
+Usage in VMware:
+OVA files simplify the deployment of virtual appliances by bundling all required files into a single archive.
+Deploying an OVA involves importing it into a VMware environment, and it is often used for distributing pre-configured virtual appliances.
+OVF (Open Virtualization Format):
+
+Format:
+OVF is a standard for packaging and distributing virtual appliances.
+It is a set of files, including a descriptor file (OVF file), configuration files, and one or more virtual disk files (VMDK).
+Usage in VMware:
+OVF files provide a standardized way to describe the configuration and properties of a virtual machine or virtual appliance.
+Deploying an OVF involves importing the individual files into a VMware environment, and it is used for interoperability across different virtualization platforms.
+
+
+https://masteringvmware.com/top-vmware-interview-questions/
+
+https://masteringvmware.com/vmware-interview-questions-answers-part-2/
+
+https://geekflare.com/scenario-based-vmware-interview-questions-answers/
+
+My First company Interview Experience : Dish Network Technologies : 7-15 LPA System Administrator
+
+Result : Fail
+
+lesson Learned :
+
+- I am not able to explain the things that i am doing in my day to day job also
+- I am too much nervous
+- Don't think of result, Think of process
+  
+
+![Dishnetwork Technologies interview Questions](https://github.com/Charan-happy/Learn_VMware/assets/89054489/de406028-f4b3-4920-9f6a-dc5bc7905ec2)
+
