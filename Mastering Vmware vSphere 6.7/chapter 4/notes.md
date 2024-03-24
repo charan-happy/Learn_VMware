@@ -57,3 +57,5 @@ vSphere Update Manager
 
 VUM is a tool designed to help VMware administrators automate and streamline the process of applying updates—patches or upgrades—to their vSphere environment. VUM is fully integrated with vCenter Server and offers the ability to scan and remediate ESXi hosts, host extensions (such as EMC's PowerPath/VE Multipathing software), older ESXi hosts (6.0 and 6.5), and some virtual appliances. Further, with VUM, administrators can upgrade VMware Tools and virtual machine (VM) hardware.
 
+
+
